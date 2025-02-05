@@ -6,6 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Jiaping Gui</title>
+    
+    <style>
+        /* 默认隐藏内容 */
+        #more-content {
+          display: none;
+          margin-top: 10px;
+          padding: 10px 10px 0px 0px;
+          background-color: #f0f0f0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+
+        /* 按钮样式 */
+        #more-button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        #more-button:hover {
+          background-color: #0056b3;
+        }
+    </style>
 
     <!-- Bootstrap -->
     <link href="bootstrap.css" rel="stylesheet">
@@ -22,25 +48,26 @@
   </head>
 
   <body>
-    <div class="container" id="container">      
+    <div class="container" id="container">
       <!-- Header -->
       <table>
         <tbody><tr>
           <td width="30%">
             <div style="text-align: center;">
-              <img src="image/gjp.png" height="180" />
+              <img src="image/gjp-formal.jpg" height="190" />
             </div>
           </td>
           <td width="20%"></td>
           <td>
               <h3>Jiaping Gui</h3>
-              Researcher
+              Assistant Professor
               <br />
-              <a href="http://www.nec-labs.com/research-departments/data-science-system-security/data-science-systems-research-home" target="_blank">Data Science & System Security Department</a><br>
-              <a href="http://www.nec-labs.com/" target="_blank">NEC Laboratories America</a><br />
-              <i class="fas fa-home"></i>&nbsp; 4 Independence Way Suite 200, Princeton, NJ 08540<br />
-              <i class="fas fa-envelope"></i>&nbsp; jgui AT nec-labs DOT com <br />
-              <i class="fab fa-google"></i>&nbsp; <a href="https://scholar.google.com/citations?user=PCHAczoAAAAJ&hl=en">My Google Scholar</a>
+              <a href="https://infosec.sjtu.edu.cn/" target="_blank">School of Cyber Science and Engineering</a><br>
+              <a href="https://english.seiee.sjtu.edu.cn/" target="_blank">School of Electronic Information and Electrical Engineering</a><br />
+              <a href="http://en.sjtu.edu.cn/" target="_blank">Shanghai Jiao Tong University</a><br />
+              <img src="image/icons/address.png" height="14" />&nbsp; 800 Dongchuan RD. Minhang District, Shanghai, China<br />
+              <img src="image/icons/email.png" height="13" />&nbsp; jgui AT sjtu DOT edu DOT cn <br />
+              <img src="image/icons/google.png" height="16" />&nbsp; <a href="https://scholar.google.com/citations?user=PCHAczoAAAAJ&hl=en">My Google Scholar</a>
           </td>
         </tr>
       </tbody></table>
@@ -51,258 +78,192 @@
       </div>
       <div class="row-fluid">
         <p>
-        I started working as a researcher at NEC Labs America in 2018.
-        I obtained Ph.D. degree in <a href="https://www.cs.usc.edu/">Computer Science</a> from the
-        <a href="https://www.usc.edu/">University of Southern California</a> in 2019. My Ph.D. supervisor was
-          <a href="https://viterbi-web.usc.edu/~halfond/">Prof. William G.J. Halfond</a>.
-          Before that, I received both my M.E. and B.S.E. degrees from <a href="http://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> in 2012 and 2010, respectively. I also received a dual-M.S. degree from <a href="https://www.gatech.edu/">Georgia Institute of Technology</a> in 2012.
+        I am currently a tenure-track assistant professor at Shanghai Jiao Tong University.
+        I received my Ph.D. in <a href="https://www.cs.usc.edu/" target="_blank">Computer Science</a> from the
+        <a href="https://www.usc.edu/" target="_blank">University of Southern California</a> in 2019. My research interests are in network and system security, AI in security, and software engineering, with a focus on designing a next generation of security systems using AI technology.
         </p>
-        <p>
-          My research interests are computer security (current project), and software engineering (earlier projects in school).
-        </p>
+        <p><font color="red">I am always looking for highly self-motivated PhD/master/undergraduate students (including visiting students) to work with me. Please drop me an email with your CV if you are interested.</font></p>
       </div>
       <div class="row-fluid content-header text-left">
-        <h2><strong>Research Interest</strong></h2>
+        <h2><strong>Recent News</strong></h2>
       </div>
       <div class="row">
         <ul>
-          <li>AI in Security</li>
-          <li>Provenance Analysis</li>
-          <li>User Behavior Analysis</li>
-          <li>Mobile Applications</li>
+          <li>(2024/12) Our paper, "ProvAudit: Enhance High-Level Privacy Inference Through System Provenance Data," has been accepted to appear in IEEE TDSC!</li>
+          <li>(2024/12) Our paper, "A Principled Approach for Detecting APTs in Massive Networks via Multi-Stage Causal Analytics," has been accepted to appear in INFOCOM 2025!</li>
+          <li>(2024/11) Invited to the live interview of CGTN Global Business. See the interview replay <a href="https://www.cgtn.com/tv/replay?id=CBDBIIA" target="_block">here</a> (my live interview started around 30:23).</li>
+          <li>(2024/11) Our paper, "BackdoorMBTI: A Backdoor Learning Multimodal Benchmark Tool Kit for Backdoor Defense Evaluation," has been accepted to appear in KDD 2025!</li>
         </ul>
+        <button id="more-button">More</button>
+        <div id="more-content">
+          <ul>
+            <li>(2024/05) Our paper, "FAMOS:Robust Privacy-Preserving Authentication on Payment Apps via Federated Multi-Modal Contrastive Learning," has been accepted to appear in USENIX Security 2024!</li>
+            <li>(2023/12) Our paper, "ProvIoT: Detecting Stealthy Attacks in IoT through Federated Edge-Cloud Security," has been accepted to appear in ACNS 2024!</li>
+          </ul>
+        </div>
       </div>
+      <script>
+          // 获取按钮和隐藏内容的元素
+          const moreButton = document.getElementById('more-button');
+          const moreContent = document.getElementById('more-content');
+
+          // 添加点击事件监听器
+          moreButton.addEventListener('click', function() {
+            if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+              // 显示内容
+              moreContent.style.display = 'block';
+              moreButton.textContent = 'Less'; // 更改按钮文字
+            } else {
+              // 隐藏内容
+              moreContent.style.display = 'none';
+              moreButton.textContent = 'More'; // 恢复按钮文字
+            }
+          });
+      </script>
       <div class="row-fluid content-header text-left">
-        <h2><strong>Publications</strong></h2>        
+        <h2><strong>Selected Publications</strong> <a href="publication.html">(More Publications)</a></h2>        
       </div>
       <div class="row">
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;<sup>♮</sup> indicates equal contribution, <sup>★</sup> indicates interns I have advised.</p>
         <ul>
           <li class="publication">
             <div class="publication-title">
-              <a>A Generic Edge-Empowered Graph Convolutional Network via Node-Edge Mutual Enhancement</a>
+              [TDSC'25] <a>ProvAudit: Enhance High-Level Privacy Inference Through System Provenance Data</a>
             </div>
             <div class="publication-author">
-              Pengyang Wang<sup>★</sup>, <strong>Jiaping Gui</strong>, Zhengzhang Chen, Junghwan Rhee, Haifeng Chen, and Yanjie Fu
+                Ding Li, Jifan Xiao, Peng Jiang, <strong>Jiaping Gui</strong>, Dongjin Song, Yun Ma, Gang Huang, and Xuanzhe Liu
             </div>
             <div class="publication-conf">
-              Proceedings of the International Conference on World Wide Web (WWW), 11 pages, April 2020.              
+                IEEE Transactions on Dependable and Secure Computing, 2025.
+            </div>
+          </li>
+          <br />
+          <li class="publication">
+            <div class="publication-title">
+              [KDD'25] <a>BackdoorMBTI: A Backdoor Learning Multimodal Benchmark Tool Kit for Backdoor Defense Evaluation</a>
+            </div>
+            <div class="publication-author">
+                Haiyang Yu, Tian Xie, <strong>Jiaping Gui</strong>, Pengyang Wang, Pengzhou Cheng, Ping Yi, and Yue Wu
+            </div>
+            <div class="publication-conf">
+                Proceedings of the 31st ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, August 2025.
+            </div>
+          </li>
+          <br />
+          <li class="publication">
+            <div class="publication-title">
+              [INFOCOM'25] <a>A Principled Approach for Detecting APTs in Massive Networks via Multi-Stage Causal Analytics</a>
+            </div>
+            <div class="publication-author">
+                <strong>Jiaping Gui</strong>, Mingjie Nie, Jinyao Guo, Futai Zou, Mati Ur Rehman, and Wajih Ul Hassan
+            </div>
+            <div class="publication-conf">
+                Proceedings of the 44th IEEE International Conference on Computer Communications (INFOCOM), May 2025.
+            </div>
+          </li>
+          <br />
+          <li class="publication">
+            <div class="publication-title">
+              [Security'24] <a>FAMOS:Robust Privacy-Preserving Authentication on Payment Apps via Federated Multi-Modal Contrastive Learning</a>
+            </div>
+            <div class="publication-author">
+              Yifeng Cai, Ziqi Zhang, <strong>Jiaping Gui</strong>, Bingyan Liu, Xiaoke Zhao, Ruoyu Li, Zhe Li, and Ding Li
+            </div>
+            <div class="publication-conf">
+              Proceedings of USENIX Security Symposium, August 2024.
             </div>            
           </li>
           <br />
           <li class="publication">
             <div class="publication-title">
-              <a>APTrace: A Responsive System for Agile Enterprise Level Causality Analysis</a>
+              [WWW'20] <a>A Generic Edge-Empowered Graph Convolutional Network via Node-Edge Mutual Enhancement</a>
+            </div>
+            <div class="publication-author">
+              Pengyang Wang, <strong>Jiaping Gui</strong>, Zhengzhang Chen, Junghwan Rhee, Haifeng Chen, and Yanjie Fu
+            </div>
+            <div class="publication-conf">
+              Proceedings of the International Conference on World Wide Web, April 2020.              
+            </div>            
+          </li>
+          <br />
+          <li class="publication">
+            <div class="publication-title">
+              [ICDE'20] <a>APTrace: A Responsive System for Agile Enterprise Level Causality Analysis</a>
             </div>
             <div class="publication-author">
               <strong>Jiaping Gui</strong>, Ding Li, Zhengzhang Chen, Junghwan Rhee, Xusheng Xiao, Mu Zhang, Kangkook Jee, Zhichun Li, and Haifeng Chen
             </div>
             <div class="publication-conf">
-              Proceedings of the 36th IEEE International Conference on Data Engineering (ICDE), 12 pages, April 2020.
+              Proceedings of the 36th IEEE International Conference on Data Engineering, April 2020.
             </div>
           </li>
           <br />
           <li class="publication">
             <div class="publication-title">
-              <a>Progressive Processing of System-Behavioral Query</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, Xusheng Xiao, Ding Li, Chung Hwan Kim, and Haifeng Chen
-            </div>
-            <div class="publication-conf">
-              Proceedings of the 35th Annual Computer Security Applications Conference (ACSAC), 12 pages, December 2019.
-            </div>
-          </li>
-          <br />
-          <li class="publication">
-            <div class="publication-title">
-              <a>Detecting Unknown Malicious Programs in Enterprise Systems via Attentional Heterogeneous Graph Neural Networks</a>
+              [IJCAI'19] <a>Detecting Unknown Malicious Programs in Enterprise Systems via Attentional Heterogeneous Graph Neural Networks</a>
             </div>
             <div class="publication-author">
               Shen Wang, Zhengzhang Chen, Xiao Yu, Ding Li, Jingchao Ni, Lu-An Tang, <strong>Jiaping Gui</strong>, Zhichun Li, Haifeng Chen, and Philip Yu
             </div>
             <div class="publication-conf">
-              Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI), 9 pages, August 2019.
+              Proceedings of the 28th International Joint Conference on Artificial Intelligence, August 2019.
             </div>
           </li>
           <br />
           <li class="publication">
             <div class="publication-title">
-              <a>An Empirical Study of Local Database Usage in Android Applications [Artifacts Evaluated]</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong><sup>♮</sup>, Yingjun Lyu<sup>♮</sup>, Mian Wan, and William G.J. Halfond
-            </div>
-            <div class="publication-conf">
-              Proceedings of the 33th International Conference on Software Maintenance and Evolution (ICSME), 12 pages, September 2017.
-            </div>
-          </li>
-          <br />
-          <li class="publication">
-            <div class="publication-title">
-              <a>Detecting Display Energy Hotspots in Android Apps</a>
-            </div>
-            <div class="publication-author">
-              Mian Wan, Yuchen Jin, Ding Li, <strong>Jiaping Gui</strong>, Sonal Mahajan, and William G.J. Halfond
-            </div>
-            <div class="publication-conf">
-              Journal of Software Testing, Verification and Reliability, 15 pages, 2017.
-            </div>
-          </li>
-          <br />
-          <li class="publication">
-            <div class="publication-title">
-              <a>Lightweight Measurement and Estimation of Mobile Ad Energy Consumption</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, Ding Li, Mian Wan, and William G.J. Halfond
-            </div>
-            <div class="publication-conf">
-              Proceedings of the 5th International Workshop on Green and Sustainable Software (ICSE-GREENS), 7 pages, May 2016.
-            </div>
-          </li>
-          <br />
-          <li class="publication">
-            <div class="publication-title">
-              <a>Automated Energy Optimization of HTTP Requests for Mobile Applications</a>
+              [ICSE'16] <a>Automated Energy Optimization of HTTP Requests for Mobile Applications</a>
             </div>
             <div class="publication-author">
               Ding Li, Yingjun Lyu, <strong>Jiaping Gui</strong>, and William G.J. Halfond
             </div>
             <div class="publication-conf">
-              Proceedings of the 38th International Conference on Software Engineering (ICSE), 12 pages, May 2016.
+              Proceedings of the 38th International Conference on Software Engineering, May 2016.
             </div>
           </li>
           <br />
           <li class="publication">
             <div class="publication-title">
-              <a>Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</a>
+              [ICSE'15] <a>Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</a>
             </div>
             <div class="publication-author">
               <strong>Jiaping Gui</strong>, Stuart Mcilroy, Meiyappan Nagappan, and William G.J. Halfond
             </div>
             <div class="publication-conf">
-              Proceedings of the 37th International Conference on Software Engineering (ICSE), 11 pages, May 2015.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>An Empirical Study of the Energy Consumption of Android Applications</a>
-            </div>
-            <div class="publication-author">
-              Ding Li, Shuai Hao, <strong>Jiaping Gui</strong>, and William G.J. Halfond
-            </div>
-            <div class="publication-conf">
-              Proceedings of the 30th International Conference on Software Maintenance and Evolution (ICSME), 10 pages, September 2014.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Cost Based Routing in Delay Tolerant Networks</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, Yue Wu, Chenji Pan, Futai Zou, and Yifei Xie
-            </div>
-            <div class="publication-conf">
-              Proceedings of the IEEE 23rd International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC), 6 pages, September 2012.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Markov Chain Based Routing Algorithm in Delay-Tolerant Networks</a>
-            </div>
-            <div class="publication-author">
-              Chenji Pan, <strong>Jiaping Gui</strong>, Jiaju Yan, and Yue Wu
-            </div>
-            <div class="publication-conf">
-              Proceedings of the IEEE/IPSJ 12th International Symposium on Applications and the Internet (SAINT), 5 pages, July 2012.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Shape Feature Analysis for Visual Speech and Speaker Recognition</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, and Shilin Wang
-            </div>
-            <div class="publication-conf">
-              Proceedings of the International Conference on Applied Informatics and Communication (ICAIC), 8 pages, August 2011.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Research on Chinese Character Recognition Using Bag of Words</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, Yi Zhou, Xinda Lin, Kai Chen, and Haibing Guan
-            </div>
-            <div class="publication-conf">
-              Journal of Applied Mechanics and Materials, 7 pages, 2010.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Research on Prevention Model of Malicious Code in Smart Phone</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, Yongkai Zhou, Jun Shen, Jiwen Cai, and Gongshen Liu
-            </div>
-            <div class="publication-conf">
-              Journal of Computer Technology and Development (Chinese), 4 pages, 2010.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Research on Prevention of Malicious Code in Smart Phone</a>
-            </div>
-            <div class="publication-author">
-              <strong>Jiaping Gui</strong>, Yongkai Zhou, Jun Shen, Jiwen Cai, and Gongshen Liu
-            </div>
-            <div class="publication-conf">
-              Journal of Information Technology (Chinese), 4 pages, 2009.
-            </div>
-          </li>
-          <br />
-          <li>
-            <div class="publication-title">
-              <a>Summary of Defense Technology Against Malicious Code on Smart Phone</a>
-            </div>
-            <div class="publication-author">
-              Jun Shen, Yongkai Zhou, <strong>Jiaping Gui</strong>, Jiwen Cai, and Gongshen Liu
-            </div>
-            <div class="publication-conf">
-              Journal of Information Technology (Chinese), 6 pages, 2009.
+              Proceedings of the 37th International Conference on Software Engineering, May 2015.
             </div>
           </li>
         </ul>
       </div>
       <div class="row-fluid content-header text-left">
-        <h2><strong>Academic Service</strong></h2>
+        <h2><strong>Recent Academic Services</strong></h2>
       </div>
       <div class="row">
         <ul>
-        <li><strong>Program Committee Member:</strong>&nbsp;&nbsp; ICSEA 2018, ICSEA 2019, SOFTENG 2019, SOFTENG 2020, SECURWARE 2020, and ISSTA 2020 Artifact Evaluation</li>        
-        <li><strong>Journal Reviewer:</strong>
+        <li><strong>Journal Editorship</strong>
           <ul>
-          <li>IEEE Transactions on Software Engineering</li>
-          <li>ACM Transactions on Data Science</li>
-          <li>Journal of Information and Software Technology</li>
-          <li>IEEE Transactions on Big Data</li>
-          <li>Journal of Empirical Software Engineering</li>
-          <li>Journal of Software: Evolution and Process</li>
-          <li>Journal of Information Science and Engineering</li>
-          <li>Journal of Sustainable Computing, Informatics and Systems</li>
-          <li>Journal of Frontiers of Information Technology & Electronic Engineering</li>
+          <li>Guest Editor, Journal of Information, Special Issue on <a href="https://www.mdpi.com/journal/information/special_issues/2WK033A8UH" target="_blank">Emerging Research on Neural Networks and Anomaly Detection</a>, 2023-2025</li>
           </ul>
         </li>
-        <li><strong>External Conference Reviewer:</strong>&nbsp;&nbsp;ISSTA 2015, FSE 2015, ICSE 2016, MobileSoft 2016, ICSE 2017, ISSTA 2017, and ICSE 2019</li>
+        <li><strong>Conference Program Committee</strong>
+          <ul>
+          <li>ACM WWW (<a href="https://www2025.thewebconf.org/" target="_blank">ACM WWW</a>), 2025</li>
+          <li>ACM SIGKDD (<a href="https://kdd2025.kdd.org/" target="_blank">ACM KDD</a>), 2025 (Awarded excellent reviewer recognition)</li>
+          <li>ACM Multimedia (<a href="https://2024.acmmm.org/" target="_blank">ACM MM</a>), 2024</li>
+          <li>ACM SIGSOFT International Symposium on Software Testing and Analysis - Artifact Evaluation (<a href="https://conf.researchr.org/track/issta-2020/issta-2020-artifact-evaluation" target="_blank">ISSTA - Artifact Evaluation</a>), 2020</li>
+          <li>ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering - Workshop on Representation Learning for Software Engineering and Program Languages (<a href="https://rlsepl-fse.github.io/" target="_blank">ESEC/FSE - RL+SE&PL</a>), 2020</li>
+          </ul>
+        </li>        
+        <li><strong>Journal Reviewer</strong>
+          <ul>
+          <li>IEEE Transactions on Software Engineering (TSE)</li>
+          <li>ACM Transactions on Software Engineering and Methodology (TOSEM)</li>
+          <li>ACM Transactions on Data Science (TDS)</li>
+          <li>IEEE Transactions on Big Data (TBD)</li>
+          <li>Journal of Empirical Software Engineering (EMSE)</li>
+          <li>Journal of Software: Evolution and Process (SOFTW-EVOL)</li>
+          <li>Journal of Sustainable Computing, Informatics and Systems (SUSCOM)</li>
+          </ul>
+        </li>
         </ul>
       </div>      
       
@@ -319,8 +280,8 @@
       <!-- Footer -->
       <br />
       <footer>
-        <span style="float:left">&copy; 2020 Jiaping Gui</span>
-        <span style="float:right">Last updated: 2020-04-21. &nbsp;</span>       
+        <span style="float:left">&copy; 2025 Jiaping Gui</span>
+        <span style="float:right">Last updated: 2025-02-05. &nbsp;</span>
       </footer>
     </div>
   </body>
